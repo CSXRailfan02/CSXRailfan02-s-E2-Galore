@@ -44,7 +44,7 @@ Quill=MaxQuill
 Q=1
 holoEntity(1):soundPlay(1,0,SoundOn)
 holoEntity(2):soundPlay(2,0,SoundOn)
-soundLevel(1,SoundLv-25)
+soundLevel(1,SoundLv-20)
 soundDSP(1,0)
 soundVolume(1,SoundVolume)
 soundLevel(2,SoundLv)
@@ -55,7 +55,7 @@ elseif(!A & ~A & Q){
 Q=0
 holoEntity(1):soundPlay(1,0,SoundOff)
 holoEntity(2):soundPlay(2,0,SoundOff)
-soundLevel(1,SoundLv-25)
+soundLevel(1,SoundLv-20)
 soundDSP(1,0)
 soundVolume(1,SoundVolume)
 soundLevel(2,SoundLv)
