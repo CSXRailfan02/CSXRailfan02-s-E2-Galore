@@ -1,4 +1,4 @@
-@name CSXRailfan02's Quillable Whistle V1.1
+@name CSXRailfan02's Quillable Whistle V1.6
 @inputs A D
 @outputs Pitch Quill MaxQuill 
 @persist SoundOn:string SoundOff:string Pitch:number Quill QuillInterval SoundVolume:number SoundLv:number MaxQuill Q
@@ -11,18 +11,18 @@
 #             Please choose the settings below that you would like to put into the e2 chip.              #
 #                                                                                                        #
 #--------------------------------------------------------------------------------------------------------#
-if(first() | duped()){                                                                                   
-                                                                                                         
-    SoundOn = "scotttrains/whistles/usa/up_4014_whistle_2_loop.wav" #This will be the Sound used for the Loop when the input is Active.                     #
-    SoundOff = "scotttrains/whistles/usa/up_4014_whistle_2_end.wav" #This will be the Sound used for the End when the input is released.                   #
-                                                                                                         
-    Pitch = 100 #The Default Pitch of the Sound when Both Inputs/Keys are Pressed. Default is 100                      
-    MaxQuill = 8 #The Pitch when Only Input A is Active. Default is 8                                                
-    QuillInterval = 4 #The Rate the Pitch will Increase/Decrease when the Whistle is Quilled. Default is 4.
-                                                                                                         
-    SoundVolume = 1 #The Volume of the Sound. Default & Max is 1.                                        
-    SoundLv = 110 #The Level in Decibels the Sounds can be Heard At. Default and Max is 110.             
-                                                                                                         
+if(first() | duped()){
+
+    SoundOn = "scotttrains/whistles/usa/up_4014_whistle_2_loop.wav" #This will be the Sound used for the Loop when the input is Active.
+    SoundOff = "scotttrains/whistles/usa/up_4014_whistle_2_end.wav" #This will be the Sound used for the End when the input is released.
+    
+    Pitch = 100 #The Default Pitch of the Sound when Both Inputs/Keys are Pressed. Default is 100.
+    MaxQuill = 8 #The Pitch when Only Input A is Active. Default is 8.
+    QuillInterval = 2 #The Rate the Pitch will Increase/Decrease when the Whistle is Quilled. Default is 2.
+    
+    SoundVolume = 1 #The Volume of the Sound. Default & Max is 1.
+    SoundLv = 110 #The Level in Decibels the Sounds can be Heard At. Default and Max is 110.
+    
 #--------------------------------------------------------------------------------------------------------#
 
 #----------------------------------------------The No Touchy Zone----------------------------------------#
@@ -62,7 +62,9 @@ soundLevel(2,SoundLv)
 soundDSP(2,16)
 soundVolume(2,SoundVolume)
 }
-interval(100)
+if(A){
+interval(10)
+}
 soundPitch(1,Pitch-Quill)
 soundPitch(2,Pitch-Quill)
 if(A & D){
