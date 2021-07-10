@@ -1,0 +1,81 @@
+@name CSXRailfan02's Super Duper Ultra Holo and Mesh Starter E2
+@inputs Base:entity
+@outputs 
+@persist A
+@trigger 
+@model models/sprops/rectangles/size_1_5/rect_6x6x3.mdl
+
+entity():setAlpha(255)
+
+#---------------------------------------------------------------------------------------------------------
+#Extensions
+
+#holoClipEnabled(A,1,1)     
+#holoClip(A,1,vec(0,0,0),vec(0,0,0),0)
+
+#holoEntity(A):setSubMaterial(1,"")
+#---------------------------------------------------------------------------------------------------------
+
+if(first() | duped()){
+timer("Spawn",100)
+}
+if(clk("Spawn")){
+
+#Normal
+
+A++
+holoCreate(A)
+holoModel(A, "")
+holoParent(A, Base)
+holoPos(A, Base:toWorld(vec(0,0,0)))
+holoAng(A, Base:toWorld(ang(0,0,0)))
+holoScale(A, vec(1,1,1))
+holoColor(A, vec(255,255,255))
+holoMaterial(A,"")
+
+#For HoloBases
+
+A+=100
+B=holoEntity(1)
+holoCreate(A)
+holoModel(A, "")
+holoParent(A, B)
+holoPos(A, B:toWorld(vec(0,0,0)))
+holoAng(A, B:toWorld(ang(0,0,0)))
+holoScale(A, vec(1,1,1))
+holoColor(A, vec(255,255,255))
+holoMaterial(A,"")
+
+#Expression 2 Mesh
+
+#Table
+
+local P2M = p2mCreate(1, Base:pos(), Base:angles())
+
+P2M:p2mPushModel(1, table(
+"model" = "",
+"hidesubmodels" = array(0),
+"pos" = vec(0,0,0),
+"ang" = ang(0,0,0),
+"scale" = vec(1,1,1),
+"inside" = 0,
+"flat" = 0,
+"bodygroup" = 0,
+"clips" = array(vec(0,0,0),vec(0,0,0))
+))
+
+#Line
+
+P2M:p2mPushModel(1,"",array(0),vec(0,0,0),ang(0,0,0),vec(1),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+
+P2M:p2mBuild()
+
+P2M:p2mSetParent(Base)
+
+P2M:p2mSetMaterial(1,"")
+
+P2M:p2mSetColor(1,vec(255))
+
+P2M:p2mSetUV(1,0)
+
+}
