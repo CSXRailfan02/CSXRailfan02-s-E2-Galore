@@ -1,0 +1,28 @@
+@name CSXRailfan02's Anti Dupesteal Protection E2 (Version 1.02)
+#--------------------------------------------------------------------------------------------------------------------------------------------------
+
+#Welcome. If this is your First Time, Allow me to Explain. SteamID64 is Where you Enter YOUR Steam 64 ID.
+#It is Case Sensitive. so Make sure you Enter the Right SteamID64. Otherwise it will Constantly Delete Itself and your Dupes,
+#With the Message Stating you Stole Something. So Not only do you Lose your Shit, But you Also get a Hammer Straight Up the Ass. Be Careful
+
+#HintMessage is what Only the Stealer will See. so Put Something Humorous. Because we all know Stealers Deserve a Little Joke.
+
+#Weld or Parent this E2 to a Contraption that is Only Built for you or Freinds. DONT USE THIS FOR RANSOME! We will Know if its true or not.
+
+#Before Attaching this to Any Contraption, Dupe it, and Place it Down.
+#Warn People of the E2 Being Tested, In Case the E2 Does go off from Case Sensitivity.
+
+#---------------------------------------------------------------------------------------------------------------------------------------------------
+Steam64ID = "" #THIS IS IMPORTANT! Enter your Steam64ID Here. Make Sure its the Right One. Its Case Sensitive.
+
+HintMessage = "Have Fun with the Staff Boio. This is why you dont Steal." #The Message Only the Dupestealer will See.
+
+#---------------------------------------------------------------------------------------------------------------------------------------------
+Message = "Attention! An Anti Dupesteal Protection E2 Has Detected a Contraption that has been Stolen/Pirated By Player: ("+owner():name()+") Please Ban This Player Via In Game or with the SteamID Printed Below, and Alert "+steamIDFrom64(Steam64ID)+" Via Steam or Discord Imediately."
+setName("CSXRailfan02's Anti Dupesteal Protection E2 (Version 1.02)")
+if(dupefinished()&owner():steamID64()!=Steam64ID){
+selfDestructAll()
+chatPrint(Message)
+chatPrint("Stealers ID: ",vec(255,0,0),+owner():steamID())
+hint(HintMessage,7)
+}
