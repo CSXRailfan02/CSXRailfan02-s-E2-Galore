@@ -1,3 +1,0 @@
-# CSXRailfan02-s-E2-Galore
-This has All of my Public E2'S
-THESE GO INTO THE EXPRESSION 2 FOLDER IN YOUR GMOD DATA FOLDER
