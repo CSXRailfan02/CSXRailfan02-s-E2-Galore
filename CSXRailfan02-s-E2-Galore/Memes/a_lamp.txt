@@ -1,0 +1,27 @@
+@name a lamp
+@inputs
+@outputs 
+@persist
+@trigger 
+@model
+
+entity():setAlpha(255)
+
+if(first() | duped()){
+timer("Spawn",100)
+}
+if(clk("Spawn")){
+
+#Normal
+
+A=1
+holoCreate(A)
+holoModel(A, "models/zexciv_train_stuff/misc/lamps/lamp_3.mdl")
+holoParent(A, entity())
+holoPos(A, entity():toWorld(vec(0,0,0)))
+holoAng(A, entity():toWorld(ang(0,0,0)))
+holoScale(A, vec(1,1,1))
+holoColor(A, vec(36))
+holoMaterial(A,"")
+
+}
