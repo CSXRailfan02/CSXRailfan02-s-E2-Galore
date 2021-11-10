@@ -1,0 +1,441 @@
+@name CSXRailfan02's Configurable 1 Chime Model V2.0 (Downward Lever)
+@inputs Quill Full
+@outputs 
+@persist A
+@trigger 
+@model models/sprops/cuboids/height06/size_1/cube_6x6x6.mdl
+
+entity():setAlpha(0)
+
+#---------------------------------------------------------------------------------------------------------
+
+BaseMat1 = "models/proppertextures/brass" #Submat 1 for the Base / Bowl
+BaseMat2 = "models/proppertextures/brass" #Submat 2 for the Base / Bowl
+BellMat1 = "models/proppertextures/acrylic" #Submat for the Bell
+BellMat2 = "models/proppertextures/acrylic" #Submat for the Screw
+MountMat = "models/proppertextures/acrylic" #Submat for the Pre-Made Mount
+LeverMat = "models/proppertextures/acrylic" #Submat for the Pull Lever
+ValveMat = "models/proppertextures/aluminum" #Submat for the Valve
+
+BaseColor1 = vec(255) #SubColor 1 for the Base / Bowl
+BaseColor2 = vec(255) #SubColor 2 for the Base / Bowl
+BellColor1 = vec(36) #SubColor for the Bell
+BellColor2 = vec(36) #SubColor for the Screw
+MountColor = vec(36) #SubColor for the Pre-Made Mount
+LeverColor = vec(36) #SubColor for the Pull Lever
+ValveColor = vec(255) #SubColor for the Valve
+
+Type = 1
+
+#1 = Generic Shop 8 Inch
+#2 = Generic Shop 10 Inch
+#3 = Generic Shop 12 Inch
+#4 = Generic Shop 24 Inch
+#5 = Ol' Timer 8 Inch
+#6 = Ol' Timer 10 Inch
+#7 = Ol' Timer 12 Inch
+#8 = Ol' Timer 24 Inch
+#9 = PRR Banshee 4 Inch 
+#10 = Reading Flat Top 6 Inch
+#11 = Reading Round Top 6 Inch
+#12 = Rio Grande Southern 8 Inch
+
+Mount = 0
+
+#0 = N/A / Custom
+#1 = Straight Pipe (Long)
+#2 = Straight Pipe (Short)
+#3 = Left Corner Pipe (Long)
+#4 = Left Corner Pipe (Short)
+#5 = Right Corner Pipe (Long)
+#6 = Right Corner Pipe (Short)
+
+Scale = 1 #Scale for Everything. Default is 1.
+
+#---------------------------------------------------------------------------------------------------------
+
+if(first() | duped()){
+timer("Spawn",100)
+}
+if(clk("Spawn")){
+
+local P2M = p2mCreate(1, entity():pos(), entity():angles())
+local P2M = p2mCreate(2, entity():pos(), entity():angles())
+local P2M = p2mCreate(3, entity():pos(), entity():angles())
+local P2M = p2mCreate(4, entity():pos(), entity():angles())
+local P2M = p2mCreate(5, entity():pos(), entity():angles())
+local P2M = p2mCreate(6, entity():pos(), entity():angles())
+
+if(Type==1){
+
+P2M:p2mPushModel(1,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,0),ang(0,0,0),vec(0.25,0.25,0.5),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(2,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,0),ang(90,0,0),vec(0.25,0.25,0.35),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(2,"models/holograms/hq_icosphere.mdl",array(0),vec(0,0,0),ang(0,0,0),vec(0.3125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(2,"models/holograms/hexagon.mdl",array(0),vec(-2,0,0),ang(90,0,0),vec(0.2,0.0625,0.2),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/hexagon.mdl",array(0),vec(0,0,-3),ang(0,0,0),vec(0.3125,0.0625,0.3125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/hq_rcylinder_thick.mdl",array(0),vec(0,0,4.5),ang(0,0,0),vec(0.55,0.55,0.25),0,0,0,array(vec(0,0,0),vec(0,0,-1)))
+P2M:p2mPushModel(1,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,4.5),ang(0,0,0),vec(0.6,0.6,0.0625),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/hq_cylinder.mdl",array(0),vec(2.75,0,-2.25),ang(0,0,90),vec(0.15,0.15,0.125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/cube.mdl",array(0),vec(2,0,-2.25),ang(90,0,0),vec(0.09,0.09,0.125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(3,"models/zexciv_train_stuff/misc/details/whistle.mdl",array(1),vec(0,0,4.5),ang(0,0,0),vec(2.25,2.25,0.66666666666),0,0,2,array(vec(0,0,2.25),vec(0,0,1)))
+P2M:p2mPushModel(4,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,8),ang(0,0,0),vec(0.12,0.12,0.6),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+
+}
+
+if(Type==2){
+
+P2M:p2mPushModel(1,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,0),ang(0,0,0),vec(0.25,0.25,0.5),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(2,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,0),ang(90,0,0),vec(0.25,0.25,0.35),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(2,"models/holograms/hq_icosphere.mdl",array(0),vec(0,0,0),ang(0,0,0),vec(0.3125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(2,"models/holograms/hexagon.mdl",array(0),vec(-2,0,0),ang(90,0,0),vec(0.2,0.0625,0.2),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/hexagon.mdl",array(0),vec(0,0,-3),ang(0,0,0),vec(0.3125,0.0625,0.3125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/hq_rcylinder_thick.mdl",array(0),vec(0,0,4.5),ang(0,0,0),vec(0.55,0.55,0.25),0,0,0,array(vec(0,0,0),vec(0,0,-1)))
+P2M:p2mPushModel(1,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,4.5),ang(0,0,0),vec(0.6,0.6,0.0625),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/hq_cylinder.mdl",array(0),vec(2.75,0,-2.25),ang(0,0,90),vec(0.15,0.15,0.125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/cube.mdl",array(0),vec(2,0,-2.25),ang(90,0,0),vec(0.09,0.09,0.125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(3,"models/zexciv_train_stuff/misc/details/whistle.mdl",array(1),vec(0,0,3.9),ang(0,0,0),vec(2.25,2.25,0.83333333333),0,0,2,array(vec(0,0,2.5),vec(0,0,1)))
+P2M:p2mPushModel(4,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,8),ang(0,0,0),vec(0.12,0.12,0.6),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+
+}
+
+if(Type==3){
+
+P2M:p2mPushModel(1,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,0),ang(0,0,0),vec(0.25,0.25,0.5),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(2,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,0),ang(90,0,0),vec(0.25,0.25,0.35),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(2,"models/holograms/hq_icosphere.mdl",array(0),vec(0,0,0),ang(0,0,0),vec(0.3125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(2,"models/holograms/hexagon.mdl",array(0),vec(-2,0,0),ang(90,0,0),vec(0.2,0.0625,0.2),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/hexagon.mdl",array(0),vec(0,0,-3),ang(0,0,0),vec(0.3125,0.0625,0.3125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/hq_rcylinder_thick.mdl",array(0),vec(0,0,4.5),ang(0,0,0),vec(0.55,0.55,0.25),0,0,0,array(vec(0,0,0),vec(0,0,-1)))
+P2M:p2mPushModel(1,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,4.5),ang(0,0,0),vec(0.6,0.6,0.0625),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/hq_cylinder.mdl",array(0),vec(2.75,0,-2.25),ang(0,0,90),vec(0.15,0.15,0.125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/cube.mdl",array(0),vec(2,0,-2.25),ang(90,0,0),vec(0.09,0.09,0.125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(3,"models/zexciv_train_stuff/misc/details/whistle.mdl",array(1),vec(0,0,3.5),ang(0,0,0),vec(2.25,2.25,1),0,0,2,array(vec(0,0,3.25),vec(0,0,1)))
+P2M:p2mPushModel(4,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,8),ang(0,0,0),vec(0.12,0.12,0.6),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+
+}
+
+if(Type==4){
+
+P2M:p2mPushModel(1,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,0),ang(0,0,0),vec(0.25,0.25,0.5),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(2,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,0),ang(90,0,0),vec(0.25,0.25,0.35),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(2,"models/holograms/hq_icosphere.mdl",array(0),vec(0,0,0),ang(0,0,0),vec(0.3125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(2,"models/holograms/hexagon.mdl",array(0),vec(-2,0,0),ang(90,0,0),vec(0.2,0.0625,0.2),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/hexagon.mdl",array(0),vec(0,0,-3),ang(0,0,0),vec(0.3125,0.0625,0.3125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/hq_rcylinder_thick.mdl",array(0),vec(0,0,4.5),ang(0,0,0),vec(0.55,0.55,0.25),0,0,0,array(vec(0,0,0),vec(0,0,-1)))
+P2M:p2mPushModel(1,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,4.5),ang(0,0,0),vec(0.6,0.6,0.0625),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/hq_cylinder.mdl",array(0),vec(2.75,0,-2.25),ang(0,0,90),vec(0.15,0.15,0.125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/cube.mdl",array(0),vec(2,0,-2.25),ang(90,0,0),vec(0.09,0.09,0.125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(3,"models/zexciv_train_stuff/misc/details/whistle.mdl",array(1),vec(0,0,0.15),ang(0,0,0),vec(2.25,2.25,2),0,0,2,array(vec(0,0,6),vec(0,0,1)))
+P2M:p2mPushModel(4,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,8),ang(0,0,0),vec(0.12,0.12,0.6),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+
+}
+
+if(Type==5){
+
+P2M:p2mPushModel(1,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,0),ang(0,0,0),vec(0.25,0.25,0.5),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(2,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,0),ang(90,0,0),vec(0.25,0.25,0.35),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(2,"models/holograms/hq_icosphere.mdl",array(0),vec(0,0,0),ang(0,0,0),vec(0.3125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(2,"models/holograms/hexagon.mdl",array(0),vec(-2,0,0),ang(90,0,0),vec(0.2,0.0625,0.2),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/hexagon.mdl",array(0),vec(0,0,-3),ang(0,0,0),vec(0.3125,0.0625,0.3125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/hq_rcylinder_thick.mdl",array(0),vec(0,0,4.5),ang(0,0,0),vec(0.55,0.55,0.25),0,0,0,array(vec(0,0,0),vec(0,0,-1)))
+P2M:p2mPushModel(1,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,4.5),ang(0,0,0),vec(0.5,0.5,0.0625),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/hq_torus.mdl",array(0),vec(0,0,4.5),ang(0,0,0),vec(0.625,0.625,0.63),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/hq_cylinder.mdl",array(0),vec(2.75,0,-2.25),ang(0,0,90),vec(0.15,0.15,0.125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/cube.mdl",array(0),vec(2,0,-2.25),ang(90,0,0),vec(0.09,0.09,0.125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(3,"models/zexciv_train_stuff/misc/details/whistle.mdl",array(1),vec(0,0,4.5),ang(0,0,0),vec(2.25,2.25,0.66666666666),0,0,2,array(vec(0,0,2.25),vec(0,0,1)))
+P2M:p2mPushModel(3,"models/holograms/hq_cone.mdl",array(0),vec(0,0,15.1),ang(0,0,0),vec(0.65,0.65,0.0625),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(3,"models/holograms/hq_cone.mdl",array(0),vec(0,0,14.35),ang(0,0,180),vec(0.65,0.65,0.0625),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(4,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,8),ang(0,0,0),vec(0.12,0.12,0.6),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+
+}
+
+if(Type==6){
+
+P2M:p2mPushModel(1,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,0),ang(0,0,0),vec(0.25,0.25,0.5),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(2,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,0),ang(90,0,0),vec(0.25,0.25,0.35),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(2,"models/holograms/hq_icosphere.mdl",array(0),vec(0,0,0),ang(0,0,0),vec(0.3125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(2,"models/holograms/hexagon.mdl",array(0),vec(-2,0,0),ang(90,0,0),vec(0.2,0.0625,0.2),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/hexagon.mdl",array(0),vec(0,0,-3),ang(0,0,0),vec(0.3125,0.0625,0.3125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/hq_rcylinder_thick.mdl",array(0),vec(0,0,4.5),ang(0,0,0),vec(0.55,0.55,0.25),0,0,0,array(vec(0,0,0),vec(0,0,-1)))
+P2M:p2mPushModel(1,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,4.5),ang(0,0,0),vec(0.5,0.5,0.0625),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/hq_torus.mdl",array(0),vec(0,0,4.5),ang(0,0,0),vec(0.625,0.625,0.63),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/hq_cylinder.mdl",array(0),vec(2.75,0,-2.25),ang(0,0,90),vec(0.15,0.15,0.125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/cube.mdl",array(0),vec(2,0,-2.25),ang(90,0,0),vec(0.09,0.09,0.125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(3,"models/zexciv_train_stuff/misc/details/whistle.mdl",array(1),vec(0,0,3.9),ang(0,0,0),vec(2.25,2.25,0.83333333333),0,0,2,array(vec(0,0,2.5),vec(0,0,1)))
+P2M:p2mPushModel(3,"models/holograms/hq_cone.mdl",array(0),vec(0,0,17.1),ang(0,0,0),vec(0.65,0.65,0.0625),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(3,"models/holograms/hq_cone.mdl",array(0),vec(0,0,16.35),ang(0,0,180),vec(0.65,0.65,0.0625),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(4,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,8),ang(0,0,0),vec(0.12,0.12,0.6),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+
+}
+
+if(Type==7){
+
+P2M:p2mPushModel(1,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,0),ang(0,0,0),vec(0.25,0.25,0.5),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(2,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,0),ang(90,0,0),vec(0.25,0.25,0.35),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(2,"models/holograms/hq_icosphere.mdl",array(0),vec(0,0,0),ang(0,0,0),vec(0.3125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(2,"models/holograms/hexagon.mdl",array(0),vec(-2,0,0),ang(90,0,0),vec(0.2,0.0625,0.2),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/hexagon.mdl",array(0),vec(0,0,-3),ang(0,0,0),vec(0.3125,0.0625,0.3125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/hq_rcylinder_thick.mdl",array(0),vec(0,0,4.5),ang(0,0,0),vec(0.55,0.55,0.25),0,0,0,array(vec(0,0,0),vec(0,0,-1)))
+P2M:p2mPushModel(1,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,4.5),ang(0,0,0),vec(0.5,0.5,0.0625),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/hq_torus.mdl",array(0),vec(0,0,4.5),ang(0,0,0),vec(0.625,0.625,0.63),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/hq_cylinder.mdl",array(0),vec(2.75,0,-2.25),ang(0,0,90),vec(0.15,0.15,0.125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/cube.mdl",array(0),vec(2,0,-2.25),ang(90,0,0),vec(0.09,0.09,0.125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(3,"models/zexciv_train_stuff/misc/details/whistle.mdl",array(1),vec(0,0,3.5),ang(0,0,0),vec(2.25,2.25,1),0,0,2,array(vec(0,0,3.25),vec(0,0,1)))
+P2M:p2mPushModel(3,"models/holograms/hq_cone.mdl",array(0),vec(0,0,19.25),ang(0,0,0),vec(0.65,0.65,0.0625),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(3,"models/holograms/hq_cone.mdl",array(0),vec(0,0,18.5),ang(0,0,180),vec(0.65,0.65,0.0625),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(4,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,8),ang(0,0,0),vec(0.12,0.12,0.6),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+
+}
+
+if(Type==8){
+
+P2M:p2mPushModel(1,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,0),ang(0,0,0),vec(0.25,0.25,0.5),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(2,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,0),ang(90,0,0),vec(0.25,0.25,0.35),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(2,"models/holograms/hq_icosphere.mdl",array(0),vec(0,0,0),ang(0,0,0),vec(0.3125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(2,"models/holograms/hexagon.mdl",array(0),vec(-2,0,0),ang(90,0,0),vec(0.2,0.0625,0.2),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/hexagon.mdl",array(0),vec(0,0,-3),ang(0,0,0),vec(0.3125,0.0625,0.3125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/hq_rcylinder_thick.mdl",array(0),vec(0,0,4.5),ang(0,0,0),vec(0.55,0.55,0.25),0,0,0,array(vec(0,0,0),vec(0,0,-1)))
+P2M:p2mPushModel(1,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,4.5),ang(0,0,0),vec(0.5,0.5,0.0625),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/hq_torus.mdl",array(0),vec(0,0,4.5),ang(0,0,0),vec(0.625,0.625,0.63),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/hq_cylinder.mdl",array(0),vec(2.75,0,-2.25),ang(0,0,90),vec(0.15,0.15,0.125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/cube.mdl",array(0),vec(2,0,-2.25),ang(90,0,0),vec(0.09,0.09,0.125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(3,"models/zexciv_train_stuff/misc/details/whistle.mdl",array(1),vec(0,0,0.15),ang(0,0,0),vec(2.25,2.25,2),0,0,2,array(vec(0,0,6),vec(0,0,1)))
+P2M:p2mPushModel(3,"models/holograms/hq_cone.mdl",array(0),vec(0,0,31.4),ang(0,0,0),vec(0.65,0.65,0.0625),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(3,"models/holograms/hq_cone.mdl",array(0),vec(0,0,30.65),ang(0,0,180),vec(0.65,0.65,0.0625),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(4,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,8),ang(0,0,0),vec(0.12,0.12,0.6),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+
+}
+
+if(Type==9){
+
+P2M:p2mPushModel(1,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,0),ang(0,0,0),vec(0.25,0.25,0.5),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(2,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,0),ang(90,0,0),vec(0.25,0.25,0.35),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(2,"models/holograms/hq_icosphere.mdl",array(0),vec(0,0,0),ang(0,0,0),vec(0.3125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(2,"models/holograms/hexagon.mdl",array(0),vec(-2,0,0),ang(90,0,0),vec(0.2,0.0625,0.2),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/hexagon.mdl",array(0),vec(0,0,-3),ang(0,0,0),vec(0.3125,0.0625,0.3125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/hq_icosphere.mdl",array(0),vec(0,0,4.9),ang(0,0,0),vec(0.55,0.55,0.375),0,0,0,array(vec(0,0,0),vec(0,0,-1)))
+P2M:p2mPushModel(1,"models/holograms/cplane.mdl",array(0),vec(0,0,4.9),ang(0,0,0),vec(0.55,0.55,0.55),0,0,0,array(vec(0,0,0),vec(0,0,-1)))
+P2M:p2mPushModel(1,"models/holograms/hq_cylinder.mdl",array(0),vec(2.75,0,-2.25),ang(0,0,90),vec(0.15,0.15,0.125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/cube.mdl",array(0),vec(2,0,-2.25),ang(90,0,0),vec(0.09,0.09,0.125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(3,"models/zexciv_train_stuff/misc/details/whistle.mdl",array(1),vec(0,0,5.65),ang(0,0,0),vec(2.125,2.125,0.25),0,0,2,array(vec(0,0,0.75),vec(0,0,1)))
+P2M:p2mPushModel(3,"models/holograms/hq_dome.mdl",array(0),vec(0,0,9.5),ang(0,0,0),vec(0.5565),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(3,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,11.4),ang(0,0,0),vec(0.12,0.12,0.3),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(3,"models/holograms/hexagon.mdl",array(0),vec(0,0,13.4),ang(0,0,0),vec(0.15,0.0625,0.15),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(4,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,8),ang(0,0,0),vec(0.12,0.12,0.6),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+
+}
+
+if(Type==10){
+
+P2M:p2mPushModel(1,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,0),ang(0,0,0),vec(0.25,0.25,0.5),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(2,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,0),ang(90,0,0),vec(0.25,0.25,0.35),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(2,"models/holograms/hq_icosphere.mdl",array(0),vec(0,0,0),ang(0,0,0),vec(0.3125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(2,"models/holograms/hexagon.mdl",array(0),vec(-2,0,0),ang(90,0,0),vec(0.2,0.0625,0.2),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/hexagon.mdl",array(0),vec(0,0,-3),ang(0,0,0),vec(0.3125,0.0625,0.3125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/hq_rcylinder_thick.mdl",array(0),vec(0,0,5.1),ang(0,0,0),vec(0.55,0.55,0.375),0,0,0,array(vec(0,0,0),vec(0,0,-1)))
+P2M:p2mPushModel(1,"models/holograms/cplane.mdl",array(0),vec(0,0,5.1),ang(0,0,0),vec(0.55,0.55,0.55),0,0,0,array(vec(0,0,0),vec(0,0,-1)))
+P2M:p2mPushModel(1,"models/holograms/hq_cylinder.mdl",array(0),vec(2.75,0,-2.25),ang(0,0,90),vec(0.15,0.15,0.125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/cube.mdl",array(0),vec(2,0,-2.25),ang(90,0,0),vec(0.09,0.09,0.125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(3,"models/zexciv_train_stuff/misc/details/whistle.mdl",array(1),vec(0,0,5.1),ang(0,0,0),vec(2.125,2.125,0.5),0,0,2,array(vec(0,0,1.5),vec(0,0,1)))
+P2M:p2mPushModel(4,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,8),ang(0,0,0),vec(0.12,0.12,0.6),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+
+}
+
+if(Type==11){
+
+P2M:p2mPushModel(1,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,0),ang(0,0,0),vec(0.25,0.25,0.5),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(2,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,0),ang(90,0,0),vec(0.25,0.25,0.35),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(2,"models/holograms/hq_icosphere.mdl",array(0),vec(0,0,0),ang(0,0,0),vec(0.3125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(2,"models/holograms/hexagon.mdl",array(0),vec(-2,0,0),ang(90,0,0),vec(0.2,0.0625,0.2),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/hexagon.mdl",array(0),vec(0,0,-3),ang(0,0,0),vec(0.3125,0.0625,0.3125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/hq_rcylinder_thick.mdl",array(0),vec(0,0,5.1),ang(0,0,0),vec(0.55,0.55,0.375),0,0,0,array(vec(0,0,0),vec(0,0,-1)))
+P2M:p2mPushModel(1,"models/holograms/cplane.mdl",array(0),vec(0,0,5.1),ang(0,0,0),vec(0.55,0.55,0.55),0,0,0,array(vec(0,0,0),vec(0,0,-1)))
+P2M:p2mPushModel(1,"models/holograms/hq_cylinder.mdl",array(0),vec(2.75,0,-2.25),ang(0,0,90),vec(0.15,0.15,0.125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/cube.mdl",array(0),vec(2,0,-2.25),ang(90,0,0),vec(0.09,0.09,0.125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(3,"models/zexciv_train_stuff/misc/details/whistle.mdl",array(1),vec(0,0,5.1),ang(0,0,0),vec(2.125,2.125,0.5),0,0,2,array(vec(0,0,1.5),vec(0,0,1)))
+P2M:p2mPushModel(3,"models/holograms/hq_dome.mdl",array(0),vec(0,0,12.8),ang(0,0,0),vec(0.5565),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(3,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,13.6),ang(0,0,0),vec(0.12,0.12,0.6),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(3,"models/holograms/hexagon.mdl",array(0),vec(0,0,17.1),ang(0,0,0),vec(0.15,0.0625,0.15),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(4,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,8),ang(0,0,0),vec(0.12,0.12,0.6),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+
+}
+
+if(Type==12){
+
+P2M:p2mPushModel(1,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,0),ang(0,0,0),vec(0.25,0.25,0.5),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(2,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,0),ang(90,0,0),vec(0.25,0.25,0.35),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(2,"models/holograms/hq_icosphere.mdl",array(0),vec(0,0,0),ang(0,0,0),vec(0.3125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(2,"models/holograms/hexagon.mdl",array(0),vec(-2,0,0),ang(90,0,0),vec(0.2,0.0625,0.2),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/hexagon.mdl",array(0),vec(0,0,-3),ang(0,0,0),vec(0.3125,0.0625,0.3125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,4),ang(0,0,0),vec(0.55,0.55,0.175),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/hq_cylinder.mdl",array(0),vec(2.75,0,-2.25),ang(0,0,90),vec(0.15,0.15,0.125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/cube.mdl",array(0),vec(2,0,-2.25),ang(90,0,0),vec(0.09,0.09,0.125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(3,"models/zexciv_train_stuff/misc/details/whistle.mdl",array(1),vec(0,0,4),ang(0,0,0),vec(2.1,2.1,0.85),0,0,2,array(vec(0,0,2.5),vec(0,0,1)))
+P2M:p2mPushModel(4,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,8),ang(0,0,0),vec(0.12,0.12,0.6),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+
+}
+
+if(Mount==1){
+
+P2M:p2mPushModel(5,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,-9),ang(0,0,0),vec(0.25,0.25,1),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+
+}
+
+if(Mount==2){
+
+P2M:p2mPushModel(5,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,-6),ang(0,0,0),vec(0.25,0.25,0.5),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+
+}
+
+if(Mount==3){
+
+P2M:p2mPushModel(5,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,-7.5),ang(0,0,0),vec(0.25,0.25,0.75),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(5,"models/holograms/hq_icosphere.mdl",array(0),vec(0,0,-12),ang(0,0,0),vec(0.25,0.25,0.25),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(5,"models/holograms/hq_cylinder.mdl",array(0),vec(0,-6,-12),ang(0,0,90),vec(0.25,0.25,1),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+
+}
+
+if(Mount==4){
+
+P2M:p2mPushModel(5,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,-5.25),ang(0,0,0),vec(0.25,0.25,0.375),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(5,"models/holograms/hq_icosphere.mdl",array(0),vec(0,0,-7.5),ang(0,0,0),vec(0.25,0.25,0.25),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(5,"models/holograms/hq_cylinder.mdl",array(0),vec(0,-6,-7.5),ang(0,0,90),vec(0.25,0.25,1),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+
+}
+
+if(Mount==5){
+
+P2M:p2mPushModel(5,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,-7.5),ang(0,0,0),vec(0.25,0.25,0.75),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(5,"models/holograms/hq_icosphere.mdl",array(0),vec(0,0,-12),ang(0,0,0),vec(0.25,0.25,0.25),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(5,"models/holograms/hq_cylinder.mdl",array(0),vec(0,6,-12),ang(0,0,90),vec(0.25,0.25,1),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+
+}
+
+if(Mount==6){
+
+P2M:p2mPushModel(5,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,-5.25),ang(0,0,0),vec(0.25,0.25,0.375),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(5,"models/holograms/hq_icosphere.mdl",array(0),vec(0,0,-7.5),ang(0,0,0),vec(0.25,0.25,0.25),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(5,"models/holograms/hq_cylinder.mdl",array(0),vec(0,6,-7.5),ang(0,0,90),vec(0.25,0.25,1),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+
+}
+
+P2M:p2mBuild()
+
+P2M:p2mSetParent(entity())
+
+P2M:p2mSetMaterial(1,BaseMat1)
+P2M:p2mSetMaterial(2,BaseMat2)
+P2M:p2mSetMaterial(3,BellMat1)
+P2M:p2mSetMaterial(4,BellMat2)
+P2M:p2mSetMaterial(5,MountMat)
+P2M:p2mSetMaterial(6,"sprops/sprops_grid")
+
+P2M:p2mSetColor(1,BaseColor1)
+P2M:p2mSetColor(2,BaseColor2)
+P2M:p2mSetColor(3,BellColor1)
+P2M:p2mSetColor(4,BellColor2)
+P2M:p2mSetColor(5,MountColor)
+P2M:p2mSetColor(6,vec(255))
+
+P2M:p2mSetUV(1,48)
+P2M:p2mSetUV(2,48)
+P2M:p2mSetUV(3,48)
+P2M:p2mSetUV(4,48)
+P2M:p2mSetUV(5,48)
+P2M:p2mSetUV(6,48)
+
+P2M:p2mSetScale(1,vec(Scale))
+P2M:p2mSetScale(2,vec(Scale))
+P2M:p2mSetScale(3,vec(Scale))
+P2M:p2mSetScale(4,vec(Scale))
+P2M:p2mSetScale(5,vec(Scale))
+
+}
+
+if(first() | duped()){
+timer("Spawn",100)
+}
+if(clk("Spawn")){
+
+holoCreate(1)
+holoParent(1, entity())
+holoPos(1, entity():toWorld(vec(3*Scale,0,-2.25*Scale)))
+holoAng(1, entity():toWorld(ang(0,0,0)))
+holoScale(1, vec(0))
+
+holoCreate(2)
+holoParent(2, entity())
+holoPos(2, entity():toWorld(vec(2*Scale,0,0*Scale)))
+holoAng(2, entity():toWorld(ang(0,0,0)))
+holoScale(2, vec(0))
+
+}
+
+if(first() | duped()){
+timer("Spawn",200)
+}
+if(clk("Spawn")){
+
+local P2M = p2mCreate(1, holoEntity(1):pos(), holoEntity(1):angles())
+
+P2M:p2mPushModel(1,"models/unionsparts/pull_valve2.mdl",array(0),vec(0,0,0),ang(0,0,180),vec(1,0.5,1),0,1,0,array(vec(0,0,0),vec(0,0,0)))
+
+P2M:p2mBuild()
+
+P2M:p2mSetParent(holoEntity(1))
+
+P2M:p2mSetMaterial(1,LeverMat)
+
+P2M:p2mSetColor(1,LeverColor)
+
+P2M:p2mSetUV(1,48)
+
+P2M:p2mSetScale(1,vec(Scale))
+
+}
+
+if(first() | duped()){
+timer("Spawn",200)
+}
+if(clk("Spawn")){
+
+local P2M = p2mCreate(1, holoEntity(2):pos(), holoEntity(2):angles())
+
+P2M:p2mPushModel(1,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,0),ang(90,0,0),vec(0.125,0.125,0.125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+
+P2M:p2mBuild()
+
+P2M:p2mSetParent(holoEntity(2))
+
+P2M:p2mSetMaterial(1,ValveMat)
+
+P2M:p2mSetColor(1,ValveColor)
+
+P2M:p2mSetUV(1,48)
+
+P2M:p2mSetScale(1,vec(Scale))
+
+}
+
+else{
+holoPos(1, entity():toWorld(vec(3*Scale,0,-2.25*Scale)))
+holoAng(1, entity():toWorld(ang(0,0,0)))
+holoPos(2, entity():toWorld(vec(2*Scale,0,0*Scale)))
+holoAng(2, entity():toWorld(ang(0,0,0)))
+}
+
+if(Quill){
+holoPos(1, entity():toWorld(vec(3*Scale,0,-2.25*Scale)))
+holoAng(1, entity():toWorld(ang(-10,0,0)))
+holoPos(2, entity():toWorld(vec(1.75*Scale,0,0*Scale)))
+holoAng(2, entity():toWorld(ang(0,0,0)))
+}
+
+if(Quill & Full){
+holoPos(1, entity():toWorld(vec(3*Scale,0,-2.25*Scale)))
+holoAng(1, entity():toWorld(ang(-20,0,0)))
+holoPos(2, entity():toWorld(vec(1.5*Scale,0,0*Scale)))
+holoAng(2, entity():toWorld(ang(0,0,0)))
+}
+
+setName("CSXRailfan02's Configurable 1 Chime Model V2.0 (Downward Lever)")
