@@ -1,0 +1,219 @@
+@name CSXRailfan02's Configurable N&W Popette Valve 1 Chime V2.2 (Downward Lever)
+@inputs Quill Full
+@outputs 
+@persist A
+@trigger 
+@model models/sprops/cuboids/height06/size_1/cube_6x6x6.mdl
+
+entity():setAlpha(0)
+
+#---------------------------------------------------------------------------------------------------------
+
+BaseMat1 = "models/proppertextures/brass" #Submat 1 for the Base / Bowl
+BaseMat2 = "models/proppertextures/aluminum" #Submat 2 for the Base / Bowl
+BellMat1 = "models/proppertextures/acrylic" #Submat for the Bell
+BellMat2 = "models/proppertextures/acrylic" #Submat for the Screw
+MountMat = "models/proppertextures/acrylic" #Submat for the Pre-Made Mount
+LeverMat = "models/proppertextures/acrylic" #Submat for the Pull Lever
+
+BaseColor1 = vec(36) #SubColor 1 for the Base / Bowl
+BaseColor2 = vec(36) #SubColor 2 for the Base / Bowl
+BellColor1 = vec(36) #SubColor for the Bell
+BellColor2 = vec(36) #SubColor for the Screw
+MountColor = vec(36) #SubColor for the Pre-Made Mount
+LeverColor = vec(36) #SubColor for the Pull Lever
+
+Type = 1
+
+#1 = 8 Inch
+#2 = 10 Inch (A Class)
+#3 = 12 Inch
+
+Mount = 0
+
+#0 = N/A / Custom
+#1 = Straight Pipe (Long)
+#2 = Straight Pipe (Short)
+#3 = Left Corner Pipe (Long)
+#4 = Left Corner Pipe (Short)
+#5 = Right Corner Pipe (Long)
+#6 = Right Corner Pipe (Short)
+
+Scale = 1 #Scale for Everything. Default is 1.
+
+#---------------------------------------------------------------------------------------------------------
+
+if(first() | duped()){
+timer("Spawn",100)
+}
+if(clk("Spawn")){
+
+local P2M = p2mCreate(1, entity():pos(), entity():angles())
+local P2M = p2mCreate(2, entity():pos(), entity():angles())
+local P2M = p2mCreate(3, entity():pos(), entity():angles())
+local P2M = p2mCreate(4, entity():pos(), entity():angles())
+local P2M = p2mCreate(5, entity():pos(), entity():angles())
+local P2M = p2mCreate(6, entity():pos(), entity():angles())
+
+if(Type==1){
+
+P2M:p2mPushModel(1,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,0),ang(0,0,0),vec(0.25,0.25,0.5),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(2,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,0),ang(0,0,0),vec(0.3125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/hexagon.mdl",array(0),vec(0,0,-3),ang(0,0,0),vec(0.3125,0.0625,0.3125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/zexciv_train_stuff/misc/details/whistle.mdl",array(1),vec(0,0,1),ang(0,0,0),vec(1.75),0,0,0,array(vec(0,0,5),vec(0,0,-1)))
+P2M:p2mPushModel(3,"models/zexciv_train_stuff/misc/details/whistle.mdl",array(1),vec(0,0,5),ang(0,0,0),vec(1.75,1.75,0.66666666666),0,0,2,array(vec(0,0,2.25),vec(0,0,1)))
+P2M:p2mPushModel(4,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,8),ang(0,0,0),vec(0.12,0.12,0.6),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+
+}
+
+if(Type==2){
+
+P2M:p2mPushModel(1,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,0),ang(0,0,0),vec(0.25,0.25,0.5),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(2,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,0),ang(0,0,0),vec(0.3125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/hexagon.mdl",array(0),vec(0,0,-3),ang(0,0,0),vec(0.3125,0.0625,0.3125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/zexciv_train_stuff/misc/details/whistle.mdl",array(1),vec(0,0,1),ang(0,0,0),vec(1.75),0,0,0,array(vec(0,0,5),vec(0,0,-1)))
+P2M:p2mPushModel(3,"models/zexciv_train_stuff/misc/details/whistle.mdl",array(1),vec(0,0,4.4),ang(0,0,0),vec(1.75,1.75,0.83333333333),0,0,2,array(vec(0,0,2.5),vec(0,0,1)))
+P2M:p2mPushModel(4,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,8),ang(0,0,0),vec(0.12,0.12,0.6),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+
+}
+
+if(Type==3){
+
+P2M:p2mPushModel(1,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,0),ang(0,0,0),vec(0.25,0.25,0.5),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(2,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,0),ang(0,0,0),vec(0.3125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/holograms/hexagon.mdl",array(0),vec(0,0,-3),ang(0,0,0),vec(0.3125,0.0625,0.3125),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/zexciv_train_stuff/misc/details/whistle.mdl",array(1),vec(0,0,1),ang(0,0,0),vec(1.75),0,0,0,array(vec(0,0,5),vec(0,0,-1)))
+P2M:p2mPushModel(3,"models/zexciv_train_stuff/misc/details/whistle.mdl",array(1),vec(0,0,4),ang(0,0,0),vec(1.75,1.75,1),0,0,2,array(vec(0,0,3.25),vec(0,0,1)))
+P2M:p2mPushModel(4,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,8),ang(0,0,0),vec(0.12,0.12,0.6),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+
+
+}
+
+if(Mount==1){
+
+P2M:p2mPushModel(5,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,-9),ang(0,0,0),vec(0.25,0.25,1),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+
+}
+
+if(Mount==2){
+
+P2M:p2mPushModel(5,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,-6),ang(0,0,0),vec(0.25,0.25,0.5),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+
+}
+
+if(Mount==3){
+
+P2M:p2mPushModel(5,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,-7.5),ang(0,0,0),vec(0.25,0.25,0.75),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(5,"models/holograms/hq_icosphere.mdl",array(0),vec(0,0,-12),ang(0,0,0),vec(0.25,0.25,0.25),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(5,"models/holograms/hq_cylinder.mdl",array(0),vec(0,-6,-12),ang(0,0,90),vec(0.25,0.25,1),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+
+}
+
+if(Mount==4){
+
+P2M:p2mPushModel(5,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,-5.25),ang(0,0,0),vec(0.25,0.25,0.375),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(5,"models/holograms/hq_icosphere.mdl",array(0),vec(0,0,-7.5),ang(0,0,0),vec(0.25,0.25,0.25),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(5,"models/holograms/hq_cylinder.mdl",array(0),vec(0,-6,-7.5),ang(0,0,90),vec(0.25,0.25,1),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+
+}
+
+if(Mount==5){
+
+P2M:p2mPushModel(5,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,-7.5),ang(0,0,0),vec(0.25,0.25,0.75),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(5,"models/holograms/hq_icosphere.mdl",array(0),vec(0,0,-12),ang(0,0,0),vec(0.25,0.25,0.25),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(5,"models/holograms/hq_cylinder.mdl",array(0),vec(0,6,-12),ang(0,0,90),vec(0.25,0.25,1),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+
+}
+
+if(Mount==6){
+
+P2M:p2mPushModel(5,"models/holograms/hq_cylinder.mdl",array(0),vec(0,0,-5.25),ang(0,0,0),vec(0.25,0.25,0.375),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(5,"models/holograms/hq_icosphere.mdl",array(0),vec(0,0,-7.5),ang(0,0,0),vec(0.25,0.25,0.25),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(5,"models/holograms/hq_cylinder.mdl",array(0),vec(0,6,-7.5),ang(0,0,90),vec(0.25,0.25,1),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+
+}
+
+P2M:p2mBuild()
+
+P2M:p2mSetParent(entity())
+
+P2M:p2mSetMaterial(1,BaseMat1)
+P2M:p2mSetMaterial(2,BaseMat2)
+P2M:p2mSetMaterial(3,BellMat1)
+P2M:p2mSetMaterial(4,BellMat2)
+P2M:p2mSetMaterial(5,MountMat)
+
+P2M:p2mSetColor(1,BaseColor1)
+P2M:p2mSetColor(2,BaseColor2)
+P2M:p2mSetColor(3,BellColor1)
+P2M:p2mSetColor(4,BellColor2)
+P2M:p2mSetColor(5,MountColor)
+
+P2M:p2mSetUV(1,48)
+P2M:p2mSetUV(2,48)
+P2M:p2mSetUV(3,48)
+P2M:p2mSetUV(4,48)
+P2M:p2mSetUV(5,48)
+
+P2M:p2mSetScale(1,vec(Scale))
+P2M:p2mSetScale(2,vec(Scale))
+P2M:p2mSetScale(3,vec(Scale))
+P2M:p2mSetScale(4,vec(Scale))
+P2M:p2mSetScale(5,vec(Scale))
+
+}
+
+if(first() | duped()){
+timer("Spawn",100)
+}
+if(clk("Spawn")){
+
+holoCreate(1)
+holoParent(1, entity())
+holoPos(1, entity():toWorld(vec(2*Scale,0,4.5*Scale)))
+holoAng(1, entity():toWorld(ang(0,0,0)))
+holoScale(1, vec(0))
+
+}
+
+if(first() | duped()){
+timer("Spawn",200)
+}
+if(clk("Spawn")){
+
+local P2M = p2mCreate(1, holoEntity(1):pos(), holoEntity(1):angles())
+
+P2M:p2mPushModel(1,"models/sprops/rectangles_superthin/size_0/rect_1_5x6.mdl",array(0),vec(1.5,0,0),ang(0,0,90),vec(0.5,0.75,0.75),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/sprops/rectangles_superthin/size_0/rect_1_5x12.mdl",array(0),vec(3,0,-5.4375),ang(90,0,90),vec(1,0.75,0.75),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+P2M:p2mPushModel(1,"models/sprops/cylinders/size_1/cylinder_1_5x3.mdl",array(0),vec(3,0,-11),ang(90,0,90),vec(1,1,0.25),0,0,0,array(vec(0,0,0),vec(0,0,0)))
+
+P2M:p2mBuild()
+
+P2M:p2mSetParent(holoEntity(1))
+
+P2M:p2mSetMaterial(1,LeverMat)
+
+P2M:p2mSetColor(1,LeverColor)
+
+P2M:p2mSetUV(1,48)
+
+P2M:p2mSetScale(1,vec(Scale))
+
+}
+
+else{
+holoPos(1, entity():toWorld(vec(2*Scale,0,4.5*Scale)))
+holoAng(1, entity():toWorld(ang(0,0,0)))
+}
+
+if(Quill){
+holoPos(1, entity():toWorld(vec(2*Scale,0,4.5*Scale)))
+holoAng(1, entity():toWorld(ang(10,0,0)))
+}
+
+if(Quill & Full){
+holoPos(1, entity():toWorld(vec(2*Scale,0,4.5*Scale)))
+holoAng(1, entity():toWorld(ang(20,0,0)))
+}
+
+setName("CSXRailfan02's Configurable N&W Popette Valve 1 Chime V2.2 (Downward Lever)")
