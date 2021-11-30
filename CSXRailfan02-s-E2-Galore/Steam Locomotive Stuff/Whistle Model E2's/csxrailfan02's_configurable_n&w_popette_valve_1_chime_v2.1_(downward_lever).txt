@@ -1,4 +1,4 @@
-@name CSXRailfan02's Configurable N&W Popette Valve 1 Chime V2.1 (Downward Lever)
+@name CSXRailfan02's Configurable N&W Popette Valve 1 Chime V2.2 (Downward Lever)
 @inputs Quill Full
 @outputs 
 @persist A
@@ -208,12 +208,12 @@ holoAng(1, entity():toWorld(ang(0,0,0)))
 
 if(Quill){
 holoPos(1, entity():toWorld(vec(2*Scale,0,4.5*Scale)))
-holoAng(1, entity():toWorld(ang(-10,0,0)))
+holoAng(1, entity():toWorld(ang(10,0,0)))
 }
 
 if(Quill & Full){
 holoPos(1, entity():toWorld(vec(2*Scale,0,4.5*Scale)))
-holoAng(1, entity():toWorld(ang(-20,0,0)))
+holoAng(1, entity():toWorld(ang(20,0,0)))
 }
 
-setName("CSXRailfan02's Configurable N&W Popette Valve 1 Chime V2.0 (Downward Lever)")
+setName("CSXRailfan02's Configurable N&W Popette Valve 1 Chime V2.2 (Downward Lever)")
